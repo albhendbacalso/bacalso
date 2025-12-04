@@ -1,0 +1,218 @@
+/* ===============================
+   GLOBAL RESET
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #F2F4F8;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* ===============================
+   NAVIGATION BAR
+================================*/
+.navbar {
+    background: #1E293B;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    border-radius: 0 0 12px 12px;
+}
+
+.nav-left h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-right a {
+    color: #E2E8F0;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 15px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-right a:hover {
+    background: #334155;
+    color: white;
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================*/
+.container {
+    width: 95%;
+    max-width: 1250px;
+    background: white;
+    margin: 40px auto;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: fadeIn 0.5s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   HEADERS
+================================*/
+h1 {
+    font-size: 30px;
+    margin-bottom: 22px;
+    font-weight: 700;
+    color: #1E293B;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* ===============================
+   BUTTONS
+================================*/
+.btn {
+    background: #2563EB;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background: #1D4ED8;
+}
+
+.btn-edit {
+    background: #10B981;
+    color: #FFF;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.btn-edit:hover {
+    background: #059669;
+}
+
+.btn-delete {
+    background: #EF4444;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.btn-delete:hover {
+    background: #DC2626;
+}
+
+/* ===============================
+   TABLE
+================================*/
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.table th {
+    background: #1E293B;
+    color: #FFF;
+    padding: 16px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.table td {
+    background: #F8FAFC;
+    padding: 16px;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 14px;
+}
+
+.table tr:nth-child(even) td {
+    background: #EEF2F6;
+}
+
+.table tr:hover td {
+    background: #E2E8F0;
+}
+
+/* ===============================
+   FORM INPUTS
+================================*/
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 16px;
+    margin: 14px 0 24px 0;
+    border-radius: 12px;
+    border: 1px solid #CBD5E1;
+    background: #F8FAFC;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563EB;
+    background: #FFF;
+    outline: none;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+}
+
+/* ===============================
+   UTILITY CLASSES
+================================*/
+.mb-20 { margin-bottom: 20px; }
+.mt-20 { margin-top: 20px; }
+.center { text-align: center; }
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media (max-width: 1000px){
+    .container {
+        padding: 30px 20px;
+        width: 90%;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 30px;
+    }
+    .nav-right a {
+        margin: 8px 8px 0 0;
+    }
+}
