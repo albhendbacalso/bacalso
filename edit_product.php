@@ -7,8 +7,9 @@ $categories = mysqli_query($conn,"SELECT * FROM categories");
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $price = $_POST['price'];
+    $stock = $_POST['stock'];
     $category_id = $_POST['category_id'];
-    mysqli_query($conn,"UPDATE products SET name='$name', price='$price', category_id='$category_id' WHERE id='$id'");
+    mysqli_query($conn,"UPDATE products SET name='$name', price='$price',stock='$stock', category_id='$category_id' WHERE id='$id'");
     header("Location: index.php");
 }
 ?>
@@ -38,7 +39,8 @@ if(isset($_POST['submit'])){
 
         <label>Price</label>
         <input type="number" name="price" step="0.01" value="<?= $product['price'];?>" required>
-
+        <label>Stock</label>
+        <input type="number" name="stock" step="0.01" value="<?= $product['stock'];?>" required>
         <label>Category</label>
         <select name="category_id" required>
             <?php while($cat=mysqli_fetch_assoc($categories)){ ?>

@@ -40,6 +40,7 @@ $result = mysqli_query($conn, $query);
             <th>ID</th>
             <th>Name</th>
             <th>Category</th>
+            <th>Stock</th>
             <th>Price</th>
             <th>Actions</th>
         </tr>
@@ -48,6 +49,7 @@ $result = mysqli_query($conn, $query);
             <td><?= $row['id']; ?></td>
             <td><?= $row['name']; ?></td>
             <td><?= $row['category_name']; ?></td>
+            <td><?= $row['stock']; ?></td>
             <td>₱<?= $row['price']; ?></td>
             <td>
                 <a class="btn-edit" href="edit_product.php?id=<?= $row['id']; ?>">Edit</a>

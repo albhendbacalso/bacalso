@@ -5,10 +5,11 @@ $categories = mysqli_query($conn,"SELECT * FROM categories");
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $price = $_POST['price'];
+    $stock = $_POST['stock'];
     $category_id = $_POST['category_id'];
 
-    mysqli_query($conn,"INSERT INTO products (name, price, category_id) 
-        VALUES ('$name','$price','$category_id')");
+    mysqli_query($conn,"INSERT INTO products (name, price,stock, category_id) 
+        VALUES ('$name','$price','$stock','$category_id')");
     header("Location: index.php");
 }
 ?>
@@ -38,6 +39,9 @@ if(isset($_POST['submit'])){
 
         <label>Price</label>
         <input type="number" name="price" step="0.01" required>
+
+        <label>Stock</label>
+        <input type="number" name="stock" step="0.01" required>
 
         <label>Category</label>
         <select name="category_id" required>

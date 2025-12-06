@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2025 at 10:01 AM
+-- Generation Time: Dec 06, 2025 at 01:44 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -105,10 +105,7 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
-(2, 1, 3, 1, 2313.00),
-(3, 2, 3, 231, 0.00),
-(4, 2, 4, 12, 0.00),
-(5, 3, 3, 1, 0.00);
+(4, 2, 4, 12, 0.00);
 
 -- --------------------------------------------------------
 
@@ -122,16 +119,17 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `description` text DEFAULT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
+  `created_at` datetime DEFAULT current_timestamp(),
+  `stock` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `category_id`, `name`, `price`, `description`, `created_at`) VALUES
-(3, 2, 'sasfas', 22313.30, 'asda', '2025-12-04 15:55:37'),
-(4, 2, 'e21', 231.00, NULL, '2025-12-04 16:43:37');
+INSERT INTO `products` (`id`, `category_id`, `name`, `price`, `description`, `created_at`, `stock`) VALUES
+(4, 2, 'e21', 231.00, NULL, '2025-12-04 16:43:37', 24),
+(5, 1, 'fwas', 123.00, NULL, '2025-12-06 20:40:49', 3);
 
 --
 -- Indexes for dumped tables
@@ -203,7 +201,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
